@@ -1,7 +1,7 @@
 # Use Apify Python base image
 FROM apify/actor-python:3.11
 
-# Install Chrome & dependencies (no libindicator7)
+# Install Chrome & dependencies
 RUN apt-get update && apt-get install -y \
     wget unzip curl gnupg \
     xvfb libxi6 libgconf-2-4 \
@@ -9,12 +9,14 @@ RUN apt-get update && apt-get install -y \
     fonts-liberation libatk-bridge2.0-0 libgtk-3-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy files
-COPY . /app
+# Copy actor metadata and source
+COPY .actor /app/.actor
+COPY src /app/src
+COPY requirements.txt Dockerfile README.md /app/
+
 WORKDIR /app
 
-# Install Python dependencies
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Run script
-CMD ["python", "-m", "main"]
+# Entrypoint handled by actor.json
