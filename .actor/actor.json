@@ -1,9 +1,15 @@
 {
-  "name": "bluebook-scraper",
-  "title": "BlueBook Scraper",
-  "description": "Scrapes company profiles from The Blue Book by keyword and location.",
-  "version": "0.0.1",
+  "actorSpecification": 1,
+  "name": "bluebook-scrapper",
+  "title": "BlueBook Scrapper",
+  "description": "Scrapes company contact data from The Blue Book website based on keyword and location search.",
+  "version": "0.1",
   "buildTag": "latest",
-  "memoryMb": 2048,
-  "timeoutSecs": 3600
+  "storages": {
+    "dataset": {
+      "name": "OUTPUT"
+    }
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile"
 }
