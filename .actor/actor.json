@@ -1,1 +1,9 @@
-
+{
+  "name": "bluebook-scraper",
+  "title": "BlueBook Scraper",
+  "description": "Scrapes company profiles from The Blue Book by keyword and location.",
+  "version": "0.0.1",
+  "buildTag": "latest",
+  "memoryMb": 2048,
+  "timeoutSecs": 3600
+}
