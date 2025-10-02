@@ -1,21 +1,20 @@
-# Use Apify Python image
+# Use Apify Python base image
 FROM apify/actor-python:3.11
 
-# Install Chrome & dependencies (needed for Selenium)
-RUN apt-get update && apt-get install -y wget unzip curl gnupg \
-    && apt-get install -y xvfb libxi6 libgconf-2-4 \
-    && apt-get install -y libnss3 libasound2 libxss1 libappindicator1 libindicator7 \
-    && apt-get install -y fonts-liberation libatk-bridge2.0-0 libgtk-3-0 \
+# Install Chrome & dependencies (no libindicator7)
+RUN apt-get update && apt-get install -y \
+    wget unzip curl gnupg \
+    xvfb libxi6 libgconf-2-4 \
+    libnss3 libasound2 libxss1 libappindicator1 \
+    fonts-liberation libatk-bridge2.0-0 libgtk-3-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
+# Copy files
+COPY . /app
 WORKDIR /app
-
-# Copy everything
-COPY . .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Start the actor
-CMD ["python", "-m", "src.main"]
+# Run script
+CMD ["python", "-m", "main"]
