@@ -12,11 +12,14 @@ RUN apt-get update && apt-get install -y \
 # Copy actor metadata and source
 COPY .actor /app/.actor
 COPY src /app/src
-COPY requirements.txt Dockerfile README.md /app/
+COPY requirements.txt README.md LICENSE Dockerfile /app/
 
 WORKDIR /app
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Debug: confirm files exist
+RUN ls -R /app
 
 # Entrypoint handled by actor.json
