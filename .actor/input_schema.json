@@ -1,1 +1,28 @@
-
+{
+  "title": "BlueBook Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keyword": {
+      "title": "Keyword / Trade",
+      "type": "string",
+      "description": "Enter the trade or service to search for (e.g. subcontractors, contractors, electricians).",
+      "default": "subcontractors"
+    },
+    "location": {
+      "title": "Location",
+      "type": "string",
+      "description": "City or state to filter search results (e.g. New York, Florida, Dallas).",
+      "default": "New York"
+    },
+    "max_companies": {
+      "title": "Maximum Companies",
+      "type": "integer",
+      "description": "How many companies to scrape (limit results per run).",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 500
+    }
+  },
+  "required": ["keyword", "location"]
+}
