@@ -1,2 +1,4 @@
-apify ~= 0.7.0
-selenium ~= 4.20.0
+apify-client==1.7.0
+apify==0.7.0
+selenium==4.21.0
+webdriver-manager==4.0.2
