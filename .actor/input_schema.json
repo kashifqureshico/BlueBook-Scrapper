@@ -7,13 +7,15 @@
       "title": "Keyword / Trade",
       "type": "string",
       "description": "Enter the trade or service to search for (e.g. subcontractors, contractors, electricians).",
-      "default": "subcontractors"
+      "default": "subcontractors",
+      "editor": "textfield"
     },
     "location": {
       "title": "Location",
       "type": "string",
       "description": "City or state to filter search results (e.g. New York, Florida, Dallas).",
-      "default": "New York"
+      "default": "New York",
+      "editor": "textfield"
     },
     "max_companies": {
       "title": "Maximum Companies",
@@ -21,7 +23,8 @@
       "description": "How many companies to scrape (limit results per run).",
       "default": 50,
       "minimum": 1,
-      "maximum": 500
+      "maximum": 500,
+      "editor": "number"
     }
   },
   "required": ["keyword", "location"]
