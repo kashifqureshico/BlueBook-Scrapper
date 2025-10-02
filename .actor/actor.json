@@ -4,6 +4,7 @@
   "title": "BlueBook Scrapper",
   "description": "Scrapes company contact data from The Blue Book website based on keyword and location search.",
   "version": "0.1",
+  "buildTag": "latest",
   "dockerfile": "Dockerfile",
   "inputSchema": "input_schema.json",
   "storages": {
