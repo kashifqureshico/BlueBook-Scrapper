@@ -6,7 +6,7 @@
   "version": "0.1",
   "buildTag": "latest",
   "dockerfile": "Dockerfile",
-  "input": ".actor/input_schema.json",
+  "input": "input_schema.json",
   "storages": {
     "dataset": "default"
   },
