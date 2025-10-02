@@ -10,5 +10,5 @@
   "storages": {
     "dataset": "default"
   },
-  "entrypoint": "python main.py"
+  "entrypoint": "src/main.py"
 }
