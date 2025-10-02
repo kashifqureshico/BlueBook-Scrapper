@@ -5,7 +5,7 @@
   "description": "Scrapes company contact data from The Blue Book website based on keyword and location search.",
   "version": "0.1",
   "dockerfile": "Dockerfile",
-  "inputSchema": "./.actor/input_schema.json",
+  "inputSchema": ".actor/input_schema.json",
   "storages": {
     "dataset": "default"
   },
